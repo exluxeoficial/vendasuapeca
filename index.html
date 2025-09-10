@@ -189,21 +189,18 @@
                     <textarea name="descricao" required rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:border-gold focus:outline-none" placeholder="Descreva detalhes importantes da peça..."></textarea>
                 </div>
 
-                <div class="mb-8">
-                    <label class="block text-sm font-semibold text-darkGray mb-2">Fotos da peça (3 a 8 fotos) *</label>
-                    <div class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-gold transition-colors">
-                        <input type="file" id="fotos" multiple accept="image/*" required class="hidden">
-                        <div onclick="document.getElementById('fotos').click()" class="cursor-pointer">
-                            <div class="text-4xl mb-4">📷</div>
-                            <p class="text-neutral mb-2">Clique para selecionar as fotos</p>
-                            <p class="text-sm text-neutral">Formatos aceitos: JPG, PNG (máx. 5MB cada)</p>
-                        </div>
-                        <div id="preview-container" class="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4"></div>
+                <div class="mb-8 bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <div class="flex items-center mb-3">
+                        <div class="text-2xl mr-3">📱</div>
+                        <h3 class="text-lg font-semibold text-darkGray">Quase lá! Falta só enviar as fotos</h3>
                     </div>
+                    <p class="text-neutral">
+                        Ao clicar no botão abaixo, você será direcionado para nosso WhatsApp. Lá você poderá enviar as fotos da sua peça de forma rápida e prática.
+                    </p>
                 </div>
 
-                <button type="submit" class="w-full bg-black text-white py-4 rounded-lg text-lg font-semibold hover:bg-gray-800 transition-colors shadow-lg">
-                    Enviar minha peça
+                <button type="submit" class="w-full bg-black text-white py-4 rounded-lg text-lg font-semibold hover:bg-gray-800 transition-colors shadow-lg" title="Você será redirecionado para o WhatsApp (66) 9200-9888 para enviar as fotos">
+                    Continuar no WhatsApp
                 </button>
             </form>
         </div>
@@ -258,7 +255,7 @@
     </section>
 
     <!-- CTA Final -->
-    <section class="py-20 px-6 bg-black text-white">
+    <section class="py-20 px-6 bg-darkGray text-white">
         <div class="max-w-4xl mx-auto text-center">
             <h2 class="text-4xl font-bold mb-6">Simples. Prático. Sustentável.</h2>
             <p class="text-xl mb-8 text-gray-300 max-w-2xl mx-auto">
@@ -280,7 +277,7 @@
             <div class="flex justify-center space-x-6">
                 <a href="https://www.instagram.com/exluxeoficial/" target="_blank" class="text-gray-400 hover:text-gold transition-colors">Instagram</a>
                 <a href="https://wa.me/556692009888" class="text-gray-400 hover:text-gold transition-colors">WhatsApp</a>
-                <a href="mailto:contato@exluxe.com.br" class="text-gray-400 hover:text-gold transition-colors">E-mail</a>
+                <span class="text-gray-400">contato@exluxe.com.br</span>
             </div>
         </div>
     </footer>
@@ -307,43 +304,7 @@
             }
         }
 
-        // Preview de fotos
-        document.getElementById('fotos').addEventListener('change', function(e) {
-            const container = document.getElementById('preview-container');
-            container.innerHTML = '';
-            
-            Array.from(e.target.files).forEach((file, index) => {
-                if (index < 8) { // Máximo 8 fotos
-                    const reader = new FileReader();
-                    reader.onload = function(e) {
-                        const div = document.createElement('div');
-                        div.className = 'relative';
-                        div.innerHTML = `
-                            <img src="${e.target.result}" class="w-full h-24 object-cover rounded-lg">
-                            <button type="button" onclick="removePhoto(${index})" class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-6 h-6 text-xs">×</button>
-                        `;
-                        container.appendChild(div);
-                    };
-                    reader.readAsDataURL(file);
-                }
-            });
-        });
 
-        function removePhoto(index) {
-            // Funcionalidade para remover foto específica
-            const input = document.getElementById('fotos');
-            const dt = new DataTransfer();
-            const files = Array.from(input.files);
-            
-            files.forEach((file, i) => {
-                if (i !== index) {
-                    dt.items.add(file);
-                }
-            });
-            
-            input.files = dt.files;
-            input.dispatchEvent(new Event('change'));
-        }
 
         // Submissão do formulário
         document.getElementById('pecaForm').addEventListener('submit', function(e) {
@@ -374,7 +335,6 @@ Descrição: ${data.descricao || 'Não informado'}`;
             
             // Reset do formulário
             this.reset();
-            document.getElementById('preview-container').innerHTML = '';
         });
 
         // Smooth scroll para navegação
@@ -388,6 +348,5 @@ Descrição: ${data.descricao || 'Não informado'}`;
             });
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97d05228f48dd833',t:'MTc1NzUyMTk0Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97d0778c447be3ff',t:'MTc1NzUyMzQ3My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
-
