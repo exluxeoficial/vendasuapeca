@@ -3,350 +3,327 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exluxe - Venda suas peças de luxo</title>
+    <meta name="description" content="Venda suas peças de luxo com a Exluxe. Ofereça suas bolsas, sapatos e roupas de marcas renomadas para nossa curadoria especializada e transforme seu closet em dinheiro.">
+    <title>Venda Suas Peças de Luxo - Exluxe</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        gold: '#D4AF37',
-                        neutral: '#777777',
-                        darkGray: '#2D3748',
-                        softBlack: '#1A202C'
-                    }
-                }
-            }
-        }
-    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        .gradient-gold {
-            background: linear-gradient(135deg, #D4AF37 0%, #F4E4BC 100%);
+        /* Estilos personalizados para combinar com a identidade da Exluxe */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8; /* Tom de branco levemente mais suave */
         }
-        .shadow-gold {
-            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
         }
-        .hover-lift {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .text-brand-gold { color: #C0A067; }
+        .bg-brand-gold { background-color: #C0A067; }
+        .border-brand-gold { border-color: #C0A067; }
+        .ring-brand-gold { --tw-ring-color: #C0A067; }
+        .btn-primary {
+            @apply bg-brand-gold text-white font-semibold py-3 px-8 rounded-md transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-gold;
         }
-        .hover-lift:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        .form-input {
+            @apply w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-gold focus:border-transparent transition-shadow duration-200;
+        }
+        .form-label {
+            @apply block text-sm font-medium text-gray-700 mb-1;
+        }
+        .hero-section {
+            background-image: url('https://images.unsplash.com/photo-1594223274512-ad4803739b7c?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        /* Estilos para o Acordeão do FAQ */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+        /* Melhoria nos cards do FAQ */
+        .faq-card {
+            @apply bg-white border border-gray-200/80 rounded-lg transition-all duration-300 hover:shadow-lg hover:border-gray-300;
+        }
+        .faq-question svg {
+            transition: transform 0.3s ease-in-out;
         }
     </style>
 </head>
-<body class="bg-white text-gray-900 font-sans">
-    <!-- Header -->
-    <header class="bg-darkGray text-white py-4 px-6">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <div class="text-2xl font-bold">
-                <span class="text-gold">Ex</span>luxe
-            </div>
-            <nav class="hidden md:flex space-x-8">
-                <a href="#como-funciona" class="hover:text-gold transition-colors">Como funciona</a>
-                <a href="#por-que-vender" class="hover:text-gold transition-colors">Por que vender</a>
-                <a href="#faq" class="hover:text-gold transition-colors">FAQ</a>
-            </nav>
+<body class="text-gray-800">
+
+    <!-- Cabeçalho -->
+    <header class="py-6 bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 flex justify-center">
+            <a href="#" title="Página Inicial da Exluxe">
+                <img src="https://raichu-uploads.s3.amazonaws.com/logo_exluxe-portal-de-luxo_zhsXwC.png" alt="[Imagem do Logo da Exluxe]" class="h-10 md:h-12">
+            </a>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="gradient-gold py-20 px-6">
-        <div class="max-w-4xl mx-auto text-center">
-            <h1 class="text-5xl md:text-6xl font-bold text-darkGray mb-6">
-                Comece a vender!<br>
-                <span class="text-white">Faça parte do consumo consciente.</span>
-            </h1>
-            <p class="text-xl text-darkGray mb-8 max-w-2xl mx-auto">
-                Transforme suas peças de luxo em oportunidade. Cuidamos de tudo para você.
-            </p>
-            <button onclick="scrollToForm()" class="bg-darkGray text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-softBlack transition-colors shadow-lg">
-                Cadastre suas peças agora
-            </button>
-        </div>
-    </section>
-
-    <!-- Como Funciona -->
-    <section id="como-funciona" class="py-20 px-6 bg-gray-50">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-16 text-darkGray">Como funciona</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-center hover-lift bg-white p-8 rounded-lg shadow-lg">
-                    <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span class="text-2xl font-bold text-darkGray">1</span>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4 text-darkGray">Cadastre suas peças</h3>
-                    <p class="text-neutral">Preencha o formulário com as informações e fotos das suas peças de luxo.</p>
-                </div>
-                <div class="text-center hover-lift bg-white p-8 rounded-lg shadow-lg">
-                    <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span class="text-2xl font-bold text-darkGray">2</span>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4 text-darkGray">Nossa equipe faz tudo por você</h3>
-                    <p class="text-neutral">Coletamos, autenticamos, fotografamos e publicamos sua peça no nosso site.</p>
-                </div>
-                <div class="text-center hover-lift bg-white p-8 rounded-lg shadow-lg">
-                    <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span class="text-2xl font-bold text-darkGray">3</span>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4 text-darkGray">Receba à vista</h3>
-                    <p class="text-neutral">Assim que sua peça for vendida, você recebe o pagamento direto na sua conta.</p>
-                </div>
+    <main>
+        <!-- Seção Principal (Hero) -->
+        <section class="hero-section relative text-white">
+            <div class="absolute inset-0 bg-black/50"></div>
+            <div class="relative container mx-auto px-6 py-24 md:py-32 text-center max-w-3xl">
+                <h1 class="text-4xl md:text-5xl font-bold leading-tight">Transforme seu Closet em Dinheiro</h1>
+                <p class="mt-4 text-lg text-gray-200">O luxo que você não usa mais pode valer muito. Dê um novo ciclo para suas peças e seja recompensada por isso.</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Por que vender na Exluxe -->
-    <section id="por-que-vender" class="py-20 px-6">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-16 text-darkGray">Por que vender na Exluxe?</h2>
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h3 class="text-2xl font-semibold mb-6 text-darkGray">Cuidamos de tudo para você</h3>
-                    <p class="text-neutral mb-8 text-lg">
-                        Desde a coleta da sua peça até a entrega ao comprador, nossa equipe especializada cuida de cada detalhe. 
-                        Você só precisa cadastrar e receber o pagamento.
-                    </p>
-                    <h3 class="text-2xl font-semibold mb-6 text-darkGray">É sustentável!</h3>
-                    <p class="text-neutral text-lg">
-                        Ao vender suas peças conosco, você prolonga o tempo de vida dos produtos e contribui para um consumo mais consciente e sustentável.
-                    </p>
-                </div>
-                <div class="bg-gradient-to-br from-gold to-yellow-300 p-8 rounded-lg shadow-gold">
-                    <div class="text-center">
-                        <div class="text-6xl mb-4">♻️</div>
-                        <h4 class="text-xl font-semibold text-darkGray mb-4">Consumo Consciente</h4>
-                        <p class="text-darkGray">Transforme seu closet em oportunidade e faça parte da economia circular.</p>
+        <!-- Como Funciona -->
+        <section class="container mx-auto px-6 py-16 md:py-24">
+            <h2 class="text-3xl md:text-4xl text-center font-bold mb-12 text-gray-900">Um Processo Simples e Transparente</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-6xl mx-auto">
+                 <div class="text-center"> <div class="flex items-center justify-center h-16 w-16 bg-amber-50 rounded-full mx-auto mb-4 border-2 border-brand-gold/30"> <svg class="h-8 w-8 text-brand-gold" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg> </div> <h3 class="text-xl font-semibold mb-2">1. Preencha o Formulário</h3> <p class="text-gray-600">Descreva sua peça com todos os detalhes para nossa pré-avaliação.</p> </div> <div class="text-center"> <div class="flex items-center justify-center h-16 w-16 bg-amber-50 rounded-full mx-auto mb-4 border-2 border-brand-gold/30"> <svg class="h-8 w-8 text-brand-gold" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg> </div> <h3 class="text-xl font-semibold mb-2">2. Envie via WhatsApp</h3> <p class="text-gray-600">Você será direcionada para nosso WhatsApp para enviar os dados e as fotos da peça.</p> </div> <div class="text-center"> <div class="flex items-center justify-center h-16 w-16 bg-amber-50 rounded-full mx-auto mb-4 border-2 border-brand-gold/30"> <svg class="h-8 w-8 text-brand-gold" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg> </div> <h3 class="text-xl font-semibold mb-2">3. Receba nossa Análise</h3> <p class="text-gray-600">Nossa curadoria analisará sua peça e retornará em até 48h com os próximos passos.</p> </div> <div class="text-center"> <div class="flex items-center justify-center h-16 w-16 bg-amber-50 rounded-full mx-auto mb-4 border-2 border-brand-gold/30"> <svg class="h-8 w-8 text-brand-gold" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg> </div> <h3 class="text-xl font-semibold mb-2">4. Anunciamos e Vendemos</h3> <p class="text-gray-600">Com a aprovação, cuidamos de todo o processo de venda para você.</p> </div>
+            </div>
+        </section>
+
+        <!-- NOVA SEÇÃO: Depoimentos -->
+        <section class="bg-white py-16 md:py-24">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <h2 class="text-3xl md:text-4xl text-center font-bold mb-12 text-gray-900">O Que Nossas Clientes Dizem</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div class="bg-gray-50 p-8 rounded-lg border border-gray-200/80">
+                        <p class="text-gray-700 italic">"O processo foi incrivelmente simples e profissional. Vendi uma bolsa que estava parada há anos e recebi o pagamento super rápido. Recomendo a Exluxe de olhos fechados!"</p>
+                        <p class="font-bold text-right mt-4 text-brand-gold">- Juliana R., São Paulo, SP</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-lg border border-gray-200/80">
+                        <p class="text-gray-700 italic">"Fiquei impressionada com o cuidado e a transparência da equipe. Minhas peças foram valorizadas e o anúncio ficou impecável. Com certeza venderei outras vezes."</p>
+                        <p class="font-bold text-right mt-4 text-brand-gold">- Mariana C., Rio de Janeiro, RJ</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Formulário -->
-    <section id="formulario" class="py-20 px-6 bg-gray-50">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-12 text-darkGray">Cadastre sua peça</h2>
-            <form id="pecaForm" class="bg-white p-8 rounded-lg shadow-lg">
-                <div class="grid md:grid-cols-2 gap-6 mb-6">
-                    <div>
-                        <label class="block text-sm font-semibold text-darkGray mb-2">Nome completo *</label>
-                        <input type="text" name="nome" required class="w-full p-3 border border-gray-300 rounded-lg focus:border-gold focus:outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-semibold text-darkGray mb-2">E-mail *</label>
-                        <input type="email" name="email" required class="w-full p-3 border border-gray-300 rounded-lg focus:border-gold focus:outline-none">
-                    </div>
-                </div>
-                
-                <div class="grid md:grid-cols-2 gap-6 mb-6">
-                    <div>
-                        <label class="block text-sm font-semibold text-darkGray mb-2">Celular/WhatsApp *</label>
-                        <input type="tel" name="telefone" required class="w-full p-3 border border-gray-300 rounded-lg focus:border-gold focus:outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-semibold text-darkGray mb-2">Marca da peça *</label>
-                        <input type="text" name="marca" required class="w-full p-3 border border-gray-300 rounded-lg focus:border-gold focus:outline-none">
-                    </div>
-                </div>
+        <!-- Formulário de Avaliação -->
+        <section id="form-section" class="container mx-auto px-6 py-16 md:py-24">
+            <div class="max-w-3xl mx-auto bg-white p-8 sm:p-12 rounded-lg shadow-lg">
+                <h2 class="text-3xl md:text-4xl text-center font-bold mb-2">Formulário de Avaliação</h2>
+                <p class="text-center text-gray-600 mb-4">Preencha os dados abaixo para iniciar o processo.</p>
+                <p class="text-center text-sm text-gray-500 mb-10">Suas peças serão tratadas com o máximo de cuidado e expertise por nossa equipe de curadoria.</p>
 
-                <div class="grid md:grid-cols-3 gap-6 mb-6">
+                <form id="vendaForm" class="space-y-6">
+                    <h3 class="text-xl font-semibold border-b pb-2 border-gray-200">Suas Informações</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="nome" class="form-label">Nome Completo</label>
+                            <input type="text" id="nome" name="Nome" class="form-input" required>
+                        </div>
+                        <div>
+                            <label for="email" class="form-label">E-mail</label>
+                            <input type="email" id="email" name="Email" class="form-input" required>
+                        </div>
+                    </div>
                     <div>
-                        <label class="block text-sm font-semibold text-darkGray mb-2">Categoria *</label>
-                        <select name="categoria" required class="w-full p-3 border border-gray-300 rounded-lg focus:border-gold focus:outline-none">
-                            <option value="">Selecione</option>
-                            <option value="vestido">Vestido</option>
-                            <option value="bolsa">Bolsa</option>
-                            <option value="sapato">Sapato</option>
-                            <option value="acessorio">Acessório</option>
-                            <option value="joia">Joia</option>
-                            <option value="relogio">Relógio</option>
-                            <option value="outro">Outro</option>
+                        <label for="telefone" class="form-label">Telefone / WhatsApp</label>
+                        <input type="tel" id="telefone" name="Telefone" class="form-input" placeholder="(XX) XXXXX-XXXX" required>
+                    </div>
+
+                    <h3 class="text-xl font-semibold border-b pb-2 border-gray-200 pt-6">Informações da Peça</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="tipo_peca" class="form-label">O que é a peça?</label>
+                            <select id="tipo_peca" name="Tipo de Peça" class="form-input" required>
+                                <option value="">Selecione uma categoria</option>
+                                <option value="Bolsa">Bolsa</option>
+                                <option value="Sapato">Sapato</option>
+                                <option value="Roupa">Roupa (Vestido, Casaco, etc.)</option>
+                                <option value="Acessório">Acessório (Cinto, Óculos, etc.)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="marca" class="form-label">Marca</label>
+                            <input type="text" id="marca" name="Marca" class="form-input" required>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="estado_peca" class="form-label">Estado da Peça</label>
+                            <select id="estado_peca" name="Estado da Peça" class="form-input" required>
+                                <option value="">Selecione o estado de conservação</option>
+                                <option value="Novo, com etiqueta">Novo, com etiqueta</option>
+                                <option value="Novo, sem etiqueta">Novo, sem etiqueta</option>
+                                <option value="Usado gentilmente">Usado gentilmente</option>
+                                <option value="Com sinais de uso">Com sinais de uso</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="data_compra" class="form-label">Data da Compra (se lembrar)</label>
+                            <input type="month" id="data_compra" name="Data da Compra" class="form-input">
+                        </div>
+                    </div>
+
+                    <!-- NOVO CAMPO CONDICIONAL -->
+                    <div id="tempo-uso-container" class="hidden">
+                        <label for="tempo_uso" class="form-label">Tempo de Utilização</label>
+                        <select id="tempo_uso" name="Tempo de Utilização" class="form-input">
+                            <option value="">Selecione o tempo aproximado</option>
+                            <option value="Menos de 1 ano">Menos de 1 ano</option>
+                            <option value="1 a 2 anos">1 a 2 anos</option>
+                            <option value="Mais de 2 anos">Mais de 2 anos</option>
                         </select>
                     </div>
+
                     <div>
-                        <label class="block text-sm font-semibold text-darkGray mb-2">Tamanho *</label>
-                        <input type="text" name="tamanho" required class="w-full p-3 border border-gray-300 rounded-lg focus:border-gold focus:outline-none">
+                        <label for="descricao" class="form-label">Descrição</label>
+                        <textarea id="descricao" name="Descrição" rows="4" class="form-input" placeholder="Ex: Material, cor, tamanho, detalhes e possíveis avarias." required></textarea>
                     </div>
-                    <div>
-                        <label class="block text-sm font-semibold text-darkGray mb-2">Preço sugerido *</label>
-                        <input type="text" name="preco" required placeholder="R$ 0,00" class="w-full p-3 border border-gray-300 rounded-lg focus:border-gold focus:outline-none">
+                    
+                    <div class="flex items-start">
+                        <div class="flex items-center h-5">
+                            <input id="termos" name="termos" type="checkbox" class="focus:ring-brand-gold h-4 w-4 text-brand-gold border-gray-300 rounded" required>
+                        </div>
+                        <div class="ml-3 text-sm">
+                            <label for="termos" class="font-medium text-gray-700">Eu li e concordo com os <a href="#" class="text-brand-gold hover:underline">termos de serviço</a> e a <a href="#" class="text-brand-gold hover:underline">política de consignação</a>.</label>
+                        </div>
                     </div>
-                </div>
+                    
+                    <div class="text-center pt-4">
+                        <button type="submit" id="submitButton" class="btn-primary w-full md:w-auto"> Enviar e continuar no WhatsApp </button>
+                        <p class="text-xs text-gray-500 mt-3">Você será redirecionado para enviar estas informações e as fotos da peça.</p>
+                    </div>
+                </form>
+            </div>
+        </section>
 
-                <div class="mb-6">
-                    <label class="block text-sm font-semibold text-darkGray mb-2">Estado de conservação *</label>
-                    <select name="estado" required class="w-full p-3 border border-gray-300 rounded-lg focus:border-gold focus:outline-none">
-                        <option value="">Selecione</option>
-                        <option value="novo-com-etiqueta">Novo com etiqueta</option>
-                        <option value="pouco-uso">Pouco uso</option>
-                        <option value="usado-bom-estado">Usado em bom estado</option>
-                    </select>
-                </div>
-
-                <div class="mb-6">
-                    <label class="block text-sm font-semibold text-darkGray mb-2">Descrição da peça *</label>
-                    <textarea name="descricao" required rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:border-gold focus:outline-none" placeholder="Descreva detalhes importantes da peça..."></textarea>
-                </div>
-
-                <div class="mb-8 bg-blue-50 border border-blue-200 rounded-lg p-6">
-                    <div class="flex items-center mb-3">
-                        <div class="text-2xl mr-3">📱</div>
-                        <h3 class="text-lg font-semibold text-darkGray">Quase lá! Falta só enviar as fotos</h3>
+        <!-- NOVA SEÇÃO: Perguntas Frequentes (FAQ) -->
+        <section class="py-16 md:py-24">
+            <div class="container mx-auto px-6 max-w-3xl">
+                <h2 class="text-3xl md:text-4xl text-center font-bold mb-12 text-gray-900">Perguntas Frequentes</h2>
+                <div class="space-y-4">
+                    <!-- FAQ 1 ATUALIZADO -->
+                    <div class="faq-card">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-5 font-semibold">
+                            <span>Quais marcas vocês aceitam?</span>
+                            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                        </button>
+                        <div class="faq-answer px-5 pb-5 text-gray-600">
+                            <p>Nosso foco são as marcas de luxo contemporâneas muito desejadas, como Michael Kors e BCBGMAXAZRIA, desde que as peças estejam em excelente estado. Se tiver dúvidas sobre uma marca específica, entre em contato conosco pelo WhatsApp.</p>
+                        </div>
                     </div>
-                    <p class="text-neutral">
-                        Ao clicar no botão abaixo, você será direcionado para nosso WhatsApp. Lá você poderá enviar as fotos da sua peça de forma rápida e prática.
-                    </p>
-                </div>
-
-                <button type="submit" class="w-full bg-black text-white py-4 rounded-lg text-lg font-semibold hover:bg-gray-800 transition-colors shadow-lg" title="Você será redirecionado para o WhatsApp (66) 9200-9888 para enviar as fotos">
-                    Continuar no WhatsApp
-                </button>
-            </form>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="py-20 px-6">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-16 text-black">FAQ</h2>
-            <div class="space-y-6">
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <button onclick="toggleFaq(1)" class="w-full text-left flex justify-between items-center">
-                        <h3 class="text-lg font-semibold text-black">Como envio minha peça?</h3>
-                        <span id="icon-1" class="text-gold text-xl">+</span>
-                    </button>
-                    <div id="faq-1" class="hidden mt-4 text-neutral">
-                        <p>Após o cadastro, nossa equipe entrará em contato para agendar a coleta gratuita na sua casa ou você pode enviar pelos Correios (frete por nossa conta).</p>
+                    <!-- FAQ 2 -->
+                    <div class="faq-card">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-5 font-semibold">
+                            <span>Qual é a comissão da Exluxe?</span>
+                            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                        </button>
+                        <div class="faq-answer px-5 pb-5 text-gray-600">
+                            <p>Nossa comissão varia de acordo com o valor e a categoria da peça. Buscamos sempre a estrutura mais justa para garantir a melhor experiência para nossas vendedoras. Todos os detalhes são alinhados com você após a aprovação da peça.</p>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <button onclick="toggleFaq(2)" class="w-full text-left flex justify-between items-center">
-                        <h3 class="text-lg font-semibold text-black">Quanto tempo leva a análise?</h3>
-                        <span id="icon-2" class="text-gold text-xl">+</span>
-                    </button>
-                    <div id="faq-2" class="hidden mt-4 text-neutral">
-                        <p>Nossa equipe analisa e autentica as peças em até 48 horas após o recebimento. Você receberá uma resposta por WhatsApp ou e-mail.</p>
-                    </div>
-                </div>
-                
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <button onclick="toggleFaq(3)" class="w-full text-left flex justify-between items-center">
-                        <h3 class="text-lg font-semibold text-black">Qual é a comissão da Exluxe?</h3>
-                        <span id="icon-3" class="text-gold text-xl">+</span>
-                    </button>
-                    <div id="faq-3" class="hidden mt-4 text-neutral">
-                        <p>Nossa comissão varia de 30% a 50% dependendo do valor da peça. Você fica com a maior parte do valor de venda, sem se preocupar com nada.</p>
-                    </div>
-                </div>
-                
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <button onclick="toggleFaq(4)" class="w-full text-left flex justify-between items-center">
-                        <h3 class="text-lg font-semibold text-black">E se minha peça não for aprovada?</h3>
-                        <span id="icon-4" class="text-gold text-xl">+</span>
-                    </button>
-                    <div id="faq-4" class="hidden mt-4 text-neutral">
-                        <p>Se a peça não atender aos nossos critérios de qualidade ou autenticidade, devolvemos gratuitamente. Você não paga nada pelo processo de análise.</p>
+                    <!-- FAQ 3 -->
+                    <div class="faq-card">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-5 font-semibold">
+                            <span>Como é feita a avaliação da minha peça?</span>
+                            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                        </button>
+                        <div class="faq-answer px-5 pb-5 text-gray-600">
+                            <p>A avaliação inicial é feita com base nas informações e fotos que você nos envia. Após a pré-aprovação via WhatsApp, a peça passa por uma rigorosa análise presencial de autenticidade e condição por nossa equipe de especialistas em nosso escritório.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- CTA Final -->
-    <section class="py-20 px-6 bg-darkGray text-white">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-6">Simples. Prático. Sustentável.</h2>
-            <p class="text-xl mb-8 text-gray-300 max-w-2xl mx-auto">
-                Nossa missão é estender o ciclo de vida dos produtos e transformar seu closet em oportunidade.
-            </p>
-            <button onclick="scrollToForm()" class="gradient-gold text-black px-8 py-4 rounded-full text-lg font-semibold hover:shadow-gold transition-all shadow-lg">
-                Cadastre suas peças agora
-            </button>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12 px-6">
-        <div class="max-w-6xl mx-auto text-center">
-            <div class="text-3xl font-bold mb-4">
-                <span class="text-gold">Ex</span>luxe
+    <!-- Rodapé -->
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-6 py-10 text-center">
+            <div class="flex justify-center mb-6">
+                <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300">
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c-4.04.04-4.885.17-6.6.95-1.745.78-2.965 2-3.746 3.746-.78 1.714-.91 2.56-.95 6.6-.04 4.04.17 4.885.95 6.6.78 1.745 2 2.965 3.746 3.746 1.714.78 2.56.91 6.6.95 4.04-.04 4.885-.17 6.6-.95 1.745-.78 2.965-2 3.746-3.746.78-1.714.91-2.56.95-6.6.04-4.04-.17-4.885-.95-6.6-.78-1.745-2-2.965-3.746-3.746C17.195 2.17 16.355 2.04 12.315 2zm-1.04 1.72c4.14.07 4.8.18 6.42.84 1.48.6 2.44 1.57 3.05 3.05.66 1.62.77 2.28.84 6.42.07 4.14-.18 4.8-.84 6.42-.6 1.48-1.57 2.44-3.05 3.05-1.62.66-2.28.77-6.42.84-4.14-.07-4.8-.18-6.42-.84-1.48-.6-2.44-1.57-3.05-3.05-.66-1.62-.77-2.28-.84-6.42-.07-4.14.18-4.8.84-6.42.6-1.48 1.57-2.44 3.05-3.05 1.62-.66 2.28-.77 6.42-.84zM12 7.25a4.75 4.75 0 100 9.5 4.75 4.75 0 000-9.5zM12 15a3 3 0 110-6 3 3 0 010 6zm6.36-8.82a1.12 1.12 0 100-2.24 1.12 1.12 0 000 2.24z" clip-rule="evenodd" /></svg>
+                </a>
             </div>
-            <p class="text-gray-400 mb-6">Consumo consciente de luxo</p>
-            <div class="flex justify-center space-x-6">
-                <a href="https://www.instagram.com/exluxeoficial/" target="_blank" class="text-gray-400 hover:text-gold transition-colors">Instagram</a>
-                <a href="https://wa.me/556692009888" class="text-gray-400 hover:text-gold transition-colors">WhatsApp</a>
-                <span class="text-gray-400">contato@exluxe.com.br</span>
-            </div>
+            <p>&copy; 2024 Exluxe. Todos os direitos reservados.</p>
+            <p class="text-sm text-gray-400 mt-2">Plataforma de intermediação para artigos de luxo second-hand.</p>
         </div>
     </footer>
 
     <script>
-        // Smooth scroll para formulário
-        function scrollToForm() {
-            document.getElementById('formulario').scrollIntoView({ 
-                behavior: 'smooth' 
-            });
-        }
-
-        // Toggle FAQ
-        function toggleFaq(num) {
-            const content = document.getElementById(`faq-${num}`);
-            const icon = document.getElementById(`icon-${num}`);
+        // Lógica para o formulário do WhatsApp
+        const form = document.getElementById('vendaForm');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const telefone = document.getElementById('telefone').value;
+            const tipoPeca = document.getElementById('tipo_peca').value;
+            const marca = document.getElementById('marca').value;
+            const estadoPeca = document.getElementById('estado_peca').value;
+            const dataCompra = document.getElementById('data_compra').value;
+            const tempoUso = document.getElementById('tempo_uso').value;
+            const descricao = document.getElementById('descricao').value;
             
-            if (content.classList.contains('hidden')) {
-                content.classList.remove('hidden');
-                icon.textContent = '−';
-            } else {
-                content.classList.add('hidden');
-                icon.textContent = '+';
+            let dataFormatada = "Não informada";
+            if (dataCompra) {
+                const [ano, mes] = dataCompra.split('-');
+                dataFormatada = `${mes}/${ano}`;
             }
-        }
 
+            let tempoDeUsoTexto = "";
+            if(tempoUso){
+                 tempoDeUsoTexto = `\n*Tempo de Uso:* ${tempoUso}`;
+            }
 
-
-        // Submissão do formulário
-        document.getElementById('pecaForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Coleta dados do formulário
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData.entries());
-            
-            // Cria mensagem para WhatsApp
-            const message = `Nova peça cadastrada na Exluxe!
-            
-Nome: ${data.nome || 'Não informado'}
-E-mail: ${data.email || 'Não informado'}
-WhatsApp: ${data.telefone || 'Não informado'}
-Marca: ${data.marca || 'Não informado'}
-Categoria: ${data.categoria || 'Não informado'}
-Tamanho: ${data.tamanho || 'Não informado'}
-Estado: ${data.estado || 'Não informado'}
-Preço sugerido: ${data.preco || 'Não informado'}
-Descrição: ${data.descricao || 'Não informado'}`;
-            
-            // Redireciona para WhatsApp
-            const whatsappUrl = `https://wa.me/556692009888?text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, '_blank');
-            
-            alert('Redirecionando para WhatsApp! Complete o envio das fotos por lá.');
-            
-            // Reset do formulário
-            this.reset();
+            const numeroLoja = "556692009888";
+            const mensagem = `Olá Exluxe! Gostaria de enviar uma peça para avaliação.\n\n*-- MEUS DADOS --*\n*Nome:* ${nome}\n*E-mail:* ${email}\n*Telefone:* ${telefone}\n\n*-- DADOS DA PEÇA --*\n*Tipo:* ${tipoPeca}\n*Marca:* ${marca}\n*Estado:* ${estadoPeca}${tempoDeUsoTexto}\n*Data da Compra:* ${dataFormatada}\n*Descrição:* ${descricao}\n\n*Aguardo instruções para enviar as fotos da peça aqui.*`;
+            const linkWhatsApp = `https://wa.me/${numeroLoja}?text=${encodeURIComponent(mensagem)}`;
+            window.open(linkWhatsApp, '_blank');
         });
 
-        // Smooth scroll para navegação
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
+        // Lógica para a máscara de telefone
+        const telefoneInput = document.getElementById('telefone');
+        telefoneInput.addEventListener('input', (event) => {
+            let input = event.target.value.replace(/\D/g, '');
+            input = input.substring(0, 11);
+            let formatted = '';
+            if (input.length > 0) { formatted = `(${input.substring(0, 2)}`; }
+            if (input.length > 2) { formatted += `) ${input.substring(2, 7)}`; }
+            if (input.length > 7) { formatted += `-${input.substring(7, 11)}`; }
+            event.target.value = formatted;
+        });
+
+        // Lógica para o acordeão do FAQ
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('svg');
+                if (answer.style.maxHeight) {
+                    answer.style.maxHeight = null;
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    document.querySelectorAll('.faq-answer').forEach(ans => ans.style.maxHeight = null);
+                    document.querySelectorAll('.faq-question svg').forEach(ic => ic.style.transform = 'rotate(0deg)');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    icon.style.transform = 'rotate(180deg)';
                 }
             });
         });
+
+        // Lógica para o campo condicional de tempo de uso
+        const estadoPecaSelect = document.getElementById('estado_peca');
+        const tempoUsoContainer = document.getElementById('tempo-uso-container');
+        const tempoUsoSelect = document.getElementById('tempo_uso');
+
+        estadoPecaSelect.addEventListener('change', (event) => {
+            const valor = event.target.value;
+            if (valor === 'Usado gentilmente' || valor === 'Com sinais de uso') {
+                tempoUsoContainer.classList.remove('hidden');
+                tempoUsoSelect.required = true;
+            } else {
+                tempoUsoContainer.classList.add('hidden');
+                tempoUsoSelect.required = false;
+                tempoUsoSelect.value = ''; // Limpa o valor se o campo for escondido
+            }
+        });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97d0778c447be3ff',t:'MTc1NzUyMzQ3My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
+</body>
 </html>
+
+
